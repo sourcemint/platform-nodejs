@@ -2,7 +2,7 @@
 exports.main = function()
 {
 	return require("sourcemint-loader-js/tests/examples.js").main({
-		LOADER: require("../lib/loader")
+		LOADER: require("../index").LOADER
 	});
 }
 
