@@ -9,6 +9,6 @@
         "vows": "0.x"
     },
     "scripts": {
-       "test": "vows tests/adapter/vows"
+        "test": "vows tests/adapter/vows"
     }
 }
