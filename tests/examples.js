@@ -54,6 +54,17 @@ function linkPackages()
 {
 	var packages = [];
 
+	if (!PATH.existsSync(__dirname + "/../node_modules"))
+	{
+		FS.mkdirSync(__dirname + "/../node_modules", 0775);
+	}
+	try {
+		// TODO: Find a symlink test that does not throw if it does not exist.
+		FS.lstatSync(__dirname + "/../node_modules/sourcemint-platform-nodejs");
+	} catch(e) {
+		FS.symlinkSync("..", __dirname + "/../node_modules/sourcemint-platform-nodejs");
+	}
+
 	var ourDescriptor = JSON.parse(FS.readFileSync(__dirname + "/../package.json"));
 
 	FS.readdirSync(EXAMPLES_BASE_PATH).forEach(function(filename)
