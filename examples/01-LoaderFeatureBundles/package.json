@@ -7,5 +7,8 @@
     "dependencies": {
         "sourcemint-loader-js": "0.x",
         "sourcemint-platform-nodejs": "0.x"        
+    },
+    "scripts": {
+        "test": "node main"
     }
 }
