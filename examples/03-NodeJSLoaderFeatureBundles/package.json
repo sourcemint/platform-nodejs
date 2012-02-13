@@ -1,0 +1,11 @@
+{
+    "name": "sourcemint-platform-nodejs-examples-03-NodeJSLoaderFeatureBundles",
+    "version": "0.1.0",
+    "engines": {
+        "nodejs": "0.x"
+    },
+    "dependencies": {
+        "sourcemint-platform-nodejs": "0.x",
+        "sourcemint-bundler-js": "0.x"
+    }
+}
