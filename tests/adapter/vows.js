@@ -5,19 +5,19 @@ var VOWS = require("vows"),
 
 VOWS.describe("Tests").addBatch(
 {
-	"All Tests":
+	"All Examples":
 	{
 		topic: function()
 		{
 			var self = this;
-			require("../all").main().then(function() {
+			require("../examples").main().then(function() {
 				self.callback(true);
 			}, function(err) {
 				// NOTE: If this fires and `err` instanceof Error `vows` will fail this test.
 				self.callback(err);
 			});
 		},
-		"all tests passed": function(status)
+		"all examples passed": function(status)
 		{
 			ASSERT.equal(status, true);
 		}

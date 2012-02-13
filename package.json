@@ -1,12 +1,13 @@
 {
     "name": "sourcemint-platform-nodejs",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "dependencies": {
         "q": "0.x",
         "sourcemint-loader-js": "0.x"
     },
     "devDependencies": {
-        "vows": "0.x"
+        "vows": "0.x",
+        "sourcemint-bundler-js": "0.x"
     },
     "scripts": {
         "test": "vows tests/adapter/vows"
