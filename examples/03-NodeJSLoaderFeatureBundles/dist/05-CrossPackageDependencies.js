@@ -14,7 +14,7 @@ require.bundle("", function(require)
         }
         
     });
-    require.memoize("0dd3491d0db6298e81fc0279641cb73ad4021cad/greetings.js", function(require, exports, module)
+    require.memoize("d6109ff5ae76742cb42153876e44ba87e2d787c4/greetings.js", function(require, exports, module)
     {
         
         var HELLO = require("package/hello");
@@ -30,7 +30,7 @@ require.bundle("", function(require)
         }
         
     });
-    require.memoize("0dd3491d0db6298e81fc0279641cb73ad4021cad/logger.js", function(require, exports, module)
+    require.memoize("d6109ff5ae76742cb42153876e44ba87e2d787c4/logger.js", function(require, exports, module)
     {
         
         exports.log = function(message)
@@ -39,7 +39,7 @@ require.bundle("", function(require)
         }
         
     });
-    require.memoize("d849fca69b213f5e4d1992dff0925894b59a3952/words/hello.js", function(require, exports, module)
+    require.memoize("73591e82f4e0340bf89a51c320d14dff5ea32dc8/words/hello.js", function(require, exports, module)
     {
         
         var GREETINGS = require("package/greetings");
@@ -55,7 +55,7 @@ require.bundle("", function(require)
         }
         
     });
-    require.memoize("372b6cf1a1c9c1ff72b8f7fd20b12eddeef5287e/lib/H.js", function(require, exports, module)
+    require.memoize("a2f670b479282d78d9dfa6ded09cf5bc22ff85a6/lib/H.js", function(require, exports, module)
     {
         
         exports.getLetter = function()
@@ -64,8 +64,8 @@ require.bundle("", function(require)
         }
         
     });
-    require.memoize("/package.json", {"main":"/main.js","mappings":{"helpers":"0dd3491d0db6298e81fc0279641cb73ad4021cad"},"directories":{"lib":"lib"}});
-    require.memoize("0dd3491d0db6298e81fc0279641cb73ad4021cad/package.json", {"mappings":{"package":"d849fca69b213f5e4d1992dff0925894b59a3952"},"directories":{"lib":""}});
-    require.memoize("d849fca69b213f5e4d1992dff0925894b59a3952/package.json", {"mappings":{"package":"0dd3491d0db6298e81fc0279641cb73ad4021cad","letters":"372b6cf1a1c9c1ff72b8f7fd20b12eddeef5287e"},"directories":{"lib":"words"}});
-    require.memoize("372b6cf1a1c9c1ff72b8f7fd20b12eddeef5287e/package.json", {"directories":{"lib":"lib"}});
+    require.memoize("/package.json", {"main":"/main.js","mappings":{"helpers":"d6109ff5ae76742cb42153876e44ba87e2d787c4"},"directories":{"lib":"lib"}});
+    require.memoize("d6109ff5ae76742cb42153876e44ba87e2d787c4/package.json", {"mappings":{"package":"73591e82f4e0340bf89a51c320d14dff5ea32dc8"},"directories":{"lib":""}});
+    require.memoize("73591e82f4e0340bf89a51c320d14dff5ea32dc8/package.json", {"mappings":{"package":"d6109ff5ae76742cb42153876e44ba87e2d787c4","letters":"a2f670b479282d78d9dfa6ded09cf5bc22ff85a6"},"directories":{"lib":"words"}});
+    require.memoize("a2f670b479282d78d9dfa6ded09cf5bc22ff85a6/package.json", {"directories":{"lib":"lib"}});
 });
