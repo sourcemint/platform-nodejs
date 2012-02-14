@@ -9,10 +9,10 @@ require.bundle("", function(require)
         var HTTP = require("__nodejs__/http");
         
         
-        exports.main = function(onReadyDeferred)
+        exports.main = function(onReadyDeferred, options)
         {
         	var server = HTTP.createServer();
-        	
+        
         	server.on("request", function (req, res)
         	{
         	    res.writeHead(200, {
@@ -21,7 +21,7 @@ require.bundle("", function(require)
         	    res.end("Hello from 01-HelloWorldServer");
         	});
         
-        	/*TEST*/ if (typeof onReadyDeferred !== "undefined") {
+        	/*TEST*/ if (onReadyDeferred) {
         	/*TEST*/     server.once("listening", function() {
         	/*TEST*/         onReadyDeferred.resolve(function onTestDone(stoppedCallback) {
         	/*TEST*/ 		     server.once("close", function() {
@@ -31,13 +31,19 @@ require.bundle("", function(require)
         	/*TEST*/ 	     });
         	/*TEST*/     });
         	/*TEST*/ }
-        	
-        	server.listen(1337, "127.0.0.1");
         
-        	console.log('Server running at http://127.0.0.1:1337/');
+        	server.listen(options.port, "127.0.0.1");
+        
+        	console.log("Server running at http://127.0.0.1:" + options.port + "/");
+        }
+        
+        if (require.main === module) {
+        	exports.main(null, {
+        		port: 1337
+        	});
         }
         
     });
     require.memoize("/package.json", {"name":"sourcemint-platform-nodejs-examples-06-Demos-01-HelloWorldServer","version":"0.1.0","engines":{"nodejs":"0.x"},"scripts":{"test":"node test"},"main":"/main.js","directories":{"lib":"lib"},"mappings":{"__nodejs__":"__nodejs.org/0__"}});
-    require.memoize("8d6f5a69893a29c09f271be17763a13c82cc0313/package.json", {"directories":{"lib":"lib"},"mappings":{}});
+    require.memoize("29418bdd1c21bb45ba588a1cf4f6418235e9d6f3/package.json", {"directories":{"lib":"lib"},"mappings":{}});
 });
