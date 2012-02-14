@@ -1,5 +1,6 @@
 
 var Q = require("q"),
+	HTTP = require("http"),
 	ERROR = require("sourcemint-platform-nodejs/lib/util/error");
 
 
@@ -7,21 +8,26 @@ exports.makeTest = function(REQUIRE, EXPORTS, MODULE, testCallback)
 {
 	EXPORTS.main = function(MAIN)
 	{
-		var deferred = Q.defer();
 		if (typeof MAIN === "undefined") {
 			MAIN = REQUIRE("./main").main;
 		}
-		try
+
+		var deferred = Q.defer();
+
+		getFreePort().then(function(port)
 		{
-			var onReadyDeferred = Q.defer();
-		
-			MAIN(onReadyDeferred);
+			var onReadyDeferred = Q.defer(),
+				options = {
+					port: port
+				};
+
+			MAIN(onReadyDeferred, options);
 			
 			Q.when(onReadyDeferred.promise, function(onTestDoneCallback)
 			{
 				var testDoneDeferred = Q.defer();
 
-				testCallback(Q, testDoneDeferred);
+				testCallback(Q, testDoneDeferred, options);
 				
 				return Q.when(testDoneDeferred.promise, function()
 				{
@@ -32,14 +38,36 @@ exports.makeTest = function(REQUIRE, EXPORTS, MODULE, testCallback)
 				});
 
 			}).fail(deferred.reject);
-		} catch(err) {
-			deferred.reject(err);
-		}
+		}).fail(deferred.reject);
+
 		return deferred.promise;
 	}
-	
-	
+
 	if (REQUIRE.main === MODULE) {
 		EXPORTS.main().fail(ERROR.logError);
 	}
+}
+
+function getFreePort(port)
+{
+	var deferred = Q.defer();
+
+	port = port || 1337;
+
+	var server = HTTP.createServer();
+
+	server.on("listening", function()
+	{
+		server.close();
+		deferred.resolve(port);
+	});
+
+	server.on("error", function()
+	{
+		deferred.resolve(getFreePort(port + 1));
+	});
+
+	server.listen(port, "127.0.0.1");
+	
+	return deferred.promise;
 }

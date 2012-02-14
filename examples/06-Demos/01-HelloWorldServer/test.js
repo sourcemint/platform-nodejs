@@ -4,11 +4,11 @@ var HELPER = require("../test-helper"),
 	HTTP = require("http");
 
 
-HELPER.makeTest(require, exports, module, function(Q, onTestDoneDeferred)
+HELPER.makeTest(require, exports, module, function(Q, onTestDoneDeferred, options)
 {
 	HTTP.get({
 		host: "127.0.0.1",
-		port: 1337,
+		port: options.port,
 		path: "/"
 	}, function(res)
 	{
