@@ -3,6 +3,8 @@ require.bundle("", function(require)
     
     require.memoize("/main.js", function(require, exports, module)
     {
+    var __filename = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies/main.js";
+    var __dirname = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies";
         
         // One-way dependency.
         var GREETINGS = require("helpers/greetings"),
@@ -14,8 +16,10 @@ require.bundle("", function(require)
         }
         
     });
-    require.memoize("efd2f7b78829c6c56446bbb200a43f2b418987ab/greetings.js", function(require, exports, module)
+    require.memoize("0dc7c21ac4311fa5aaaff9524b6df7c69dbcca75/greetings.js", function(require, exports, module)
     {
+    var __filename = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies/greetings.js";
+    var __dirname = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies";
         
         var HELLO = require("package/hello");
         
@@ -30,8 +34,10 @@ require.bundle("", function(require)
         }
         
     });
-    require.memoize("efd2f7b78829c6c56446bbb200a43f2b418987ab/logger.js", function(require, exports, module)
+    require.memoize("0dc7c21ac4311fa5aaaff9524b6df7c69dbcca75/logger.js", function(require, exports, module)
     {
+    var __filename = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies/logger.js";
+    var __dirname = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies";
         
         exports.log = function(message)
         {
@@ -39,8 +45,10 @@ require.bundle("", function(require)
         }
         
     });
-    require.memoize("d140ff9fd2383e3cf32d9dde3d56fe216c4ecbc4/words/hello.js", function(require, exports, module)
+    require.memoize("adaff6a98b87ad86ad811426b3d58455be710a2b/words/hello.js", function(require, exports, module)
     {
+    var __filename = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies/words/hello.js";
+    var __dirname = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies/words";
         
         var GREETINGS = require("package/greetings");
         
@@ -55,8 +63,10 @@ require.bundle("", function(require)
         }
         
     });
-    require.memoize("1f3337f8f6f0303cff72d66d597d715a3589870c/lib/H.js", function(require, exports, module)
+    require.memoize("880d7347f629551de3bc7bb2dd26533eaf27cdbd/lib/H.js", function(require, exports, module)
     {
+    var __filename = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies/lib/H.js";
+    var __dirname = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies/lib";
         
         exports.getLetter = function()
         {
@@ -64,8 +74,8 @@ require.bundle("", function(require)
         }
         
     });
-    require.memoize("/package.json", {"main":"/main.js","mappings":{"helpers":"efd2f7b78829c6c56446bbb200a43f2b418987ab"},"directories":{"lib":"lib"}});
-    require.memoize("efd2f7b78829c6c56446bbb200a43f2b418987ab/package.json", {"mappings":{"package":"d140ff9fd2383e3cf32d9dde3d56fe216c4ecbc4"},"directories":{"lib":""}});
-    require.memoize("d140ff9fd2383e3cf32d9dde3d56fe216c4ecbc4/package.json", {"mappings":{"package":"efd2f7b78829c6c56446bbb200a43f2b418987ab","letters":"1f3337f8f6f0303cff72d66d597d715a3589870c"},"directories":{"lib":"words"}});
-    require.memoize("1f3337f8f6f0303cff72d66d597d715a3589870c/package.json", {"directories":{"lib":"lib"}});
+    require.memoize("/package.json", {"main":"/main.js","mappings":{"helpers":"0dc7c21ac4311fa5aaaff9524b6df7c69dbcca75"},"directories":{"lib":"lib"}});
+    require.memoize("0dc7c21ac4311fa5aaaff9524b6df7c69dbcca75/package.json", {"mappings":{"package":"adaff6a98b87ad86ad811426b3d58455be710a2b"},"directories":{"lib":""}});
+    require.memoize("adaff6a98b87ad86ad811426b3d58455be710a2b/package.json", {"mappings":{"package":"0dc7c21ac4311fa5aaaff9524b6df7c69dbcca75","letters":"880d7347f629551de3bc7bb2dd26533eaf27cdbd"},"directories":{"lib":"words"}});
+    require.memoize("880d7347f629551de3bc7bb2dd26533eaf27cdbd/package.json", {"directories":{"lib":"lib"},"mappings":{}});
 });

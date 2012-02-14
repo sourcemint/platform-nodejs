@@ -3,6 +3,8 @@ require.bundle("", function(require)
     
     require.memoize("/main.js", function(require, exports, module)
     {
+    var __filename = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/07-TextModule/main.js";
+    var __dirname = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/07-TextModule";
         
         var TEXT = require("./hello.txt");
         
@@ -20,5 +22,5 @@ require.bundle("", function(require)
         
     });
     require.memoize("/hello.txt", "Hello%20%5C%20%22%200%20-%20_%20.%20!%20~%20*%20'%20(%20)%20%3B%20%2C%20%2F%20%3F%20%3A%20%40%20%26%20%3D%20%2B%20%24");
-    require.memoize("/package.json", {"main":"/main.js","directories":{"lib":"lib"}});
+    require.memoize("/package.json", {"main":"/main.js","directories":{"lib":"lib"},"mappings":{}});
 });

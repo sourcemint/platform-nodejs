@@ -3,6 +3,8 @@ require.bundle("", function(require)
     
     require.memoize("/main.js", function(require, exports, module)
     {
+    var __filename = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/04-PackageLocalDependencies/main.js";
+    var __dirname = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/04-PackageLocalDependencies";
         
         // One-way dependency.
         var GREETINGS = require("./greetings");
@@ -15,6 +17,8 @@ require.bundle("", function(require)
     });
     require.memoize("/greetings.js", function(require, exports, module)
     {
+    var __filename = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/04-PackageLocalDependencies/greetings.js";
+    var __dirname = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/04-PackageLocalDependencies";
         
         // Circular dependency.
         var HELLO = require("./words/hello");
@@ -32,6 +36,8 @@ require.bundle("", function(require)
     });
     require.memoize("/words/hello.js", function(require, exports, module)
     {
+    var __filename = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/04-PackageLocalDependencies/words/hello.js";
+    var __dirname = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/04-PackageLocalDependencies/words";
         
         // Circular dependency.
         var GREETINGS = require("../greetings");
@@ -47,5 +53,5 @@ require.bundle("", function(require)
         }
         
     });
-    require.memoize("/package.json", {"main":"/main.js","directories":{"lib":"lib"}});
+    require.memoize("/package.json", {"main":"/main.js","directories":{"lib":"lib"},"mappings":{}});
 });
