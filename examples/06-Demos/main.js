@@ -1,6 +1,5 @@
 
-var LOADER = require("sourcemint-platform-nodejs/lib/loader"),
-	ERROR = require("sourcemint-platform-nodejs/lib/util/error"),
+var ERROR = require("sourcemint-platform-nodejs/lib/util/error"),
 	EXEC = require("child_process").exec;
 	PATH = require("path"),
 	FS = require("fs");
