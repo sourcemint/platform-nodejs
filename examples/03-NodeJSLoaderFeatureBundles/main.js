@@ -21,7 +21,9 @@ exports.main = function()
 		{
 			done = Q.when(done, function()
 			{
-				return Q.when(BUNDLER.bundle(exampleBasePath, __dirname + "/dist"), function()
+				return Q.when(BUNDLER.bundle(exampleBasePath, __dirname + "/dist", {
+					packageIdHashSeed: "__TEST__"
+				}), function()
 				{
 					if (filename === "Avoid-VariableRequire")
 					{

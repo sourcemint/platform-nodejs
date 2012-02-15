@@ -20,7 +20,9 @@ exports.main = function()
 		{
 			done = Q.when(done, function()
 			{
-				return BUNDLER.bundle(exampleBasePath, __dirname + "/dist");
+				return BUNDLER.bundle(exampleBasePath, __dirname + "/dist", {
+					packageIdHashSeed: "__TEST__"
+				});
 			});
 		}
 	});
