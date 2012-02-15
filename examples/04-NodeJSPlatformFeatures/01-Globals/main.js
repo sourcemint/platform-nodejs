@@ -49,9 +49,13 @@ exports.main = function()
 		throw new Error("The '__filename' global variable should be defined!");
 	}
 	
-	if (__filename !== (require.sandbox.id + module.id))
+	// TODO: Detect running mode and insist on test if running in sourcemint loader.
+	if (typeof require.sandbox !== "undefined")
 	{
-		throw new Error("The '__filename' global does not equal the value of 'require.sandbox.id + module.id'!");
+		if (__filename !== (require.sandbox.id + module.id))
+		{
+			throw new Error("The '__filename' global does not equal the value of 'require.sandbox.id + module.id'!");
+		}
 	}
 	
 	if (typeof __dirname === "undefined")
@@ -59,11 +63,19 @@ exports.main = function()
 		throw new Error("The '__dirname' global variable should be defined!");
 	}
 
-	if (__dirname !== (require.sandbox.id + module.id).replace(/\/([^\/]*)$/,""))
+	// TODO: Detect running mode and insist on test if running in sourcemint loader.
+	if (typeof require.sandbox !== "undefined")
 	{
-		throw new Error("The '__dirname' global does not equal the value of 'PATH.dirname(require.sandbox.id + module.id)'!");
+		if (__dirname !== (require.sandbox.id + module.id).replace(/\/([^\/]*)$/,""))
+		{
+			throw new Error("The '__dirname' global does not equal the value of 'PATH.dirname(require.sandbox.id + module.id)'!");
+		}
 	}
 	
-	
 	console.log("01-Globals OK");
+}
+
+
+if (require.main === module) {
+	exports.main();
 }
