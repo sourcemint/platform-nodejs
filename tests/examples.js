@@ -34,7 +34,7 @@ function installMissingDependencies(packageRootPath)
 {
 	var deferred = Q.defer();
 
-	EXEC("npm install .", {
+	EXEC("npm install", {
 		cwd: packageRootPath
 	}, function(err, stdout, stderr)
 	{
