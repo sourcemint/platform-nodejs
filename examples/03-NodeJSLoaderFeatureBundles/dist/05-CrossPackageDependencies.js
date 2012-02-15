@@ -3,8 +3,8 @@ require.bundle("", function(require)
     
     require.memoize("/main.js", function(require, exports, module)
     {
-    var __filename = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies/main.js";
-    var __dirname = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies";
+        var __filename = require.sandbox.id + "/main.js";
+        var __dirname = require.sandbox.id + "";
         
         // One-way dependency.
         var GREETINGS = require("helpers/greetings"),
@@ -18,8 +18,8 @@ require.bundle("", function(require)
     });
     require.memoize("7560b93e78b4e2a0c520988986f530a1c49b5229/greetings.js", function(require, exports, module)
     {
-    var __filename = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies/greetings.js";
-    var __dirname = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies";
+        var __filename = require.sandbox.id + "7560b93e78b4e2a0c520988986f530a1c49b5229/greetings.js";
+        var __dirname = require.sandbox.id + "/7560b93e78b4e2a0c520988986f530a1c49b5229";
         
         var HELLO = require("package/hello");
         
@@ -36,8 +36,8 @@ require.bundle("", function(require)
     });
     require.memoize("7560b93e78b4e2a0c520988986f530a1c49b5229/logger.js", function(require, exports, module)
     {
-    var __filename = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies/logger.js";
-    var __dirname = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies";
+        var __filename = require.sandbox.id + "7560b93e78b4e2a0c520988986f530a1c49b5229/logger.js";
+        var __dirname = require.sandbox.id + "/7560b93e78b4e2a0c520988986f530a1c49b5229";
         
         exports.log = function(message)
         {
@@ -47,8 +47,8 @@ require.bundle("", function(require)
     });
     require.memoize("19819d780486f6050197ad891f5e90ba86dbd38f/words/hello.js", function(require, exports, module)
     {
-    var __filename = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies/words/hello.js";
-    var __dirname = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies/words";
+        var __filename = require.sandbox.id + "19819d780486f6050197ad891f5e90ba86dbd38f/words/hello.js";
+        var __dirname = require.sandbox.id + "/19819d780486f6050197ad891f5e90ba86dbd38f/words";
         
         var GREETINGS = require("package/greetings");
         
@@ -65,8 +65,8 @@ require.bundle("", function(require)
     });
     require.memoize("5390a08ebb853e94c69c041a471086f0d3e7d61f/lib/H.js", function(require, exports, module)
     {
-    var __filename = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies/lib/H.js";
-    var __dirname = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/05-CrossPackageDependencies/lib";
+        var __filename = require.sandbox.id + "5390a08ebb853e94c69c041a471086f0d3e7d61f/lib/H.js";
+        var __dirname = require.sandbox.id + "/5390a08ebb853e94c69c041a471086f0d3e7d61f/lib";
         
         exports.getLetter = function()
         {

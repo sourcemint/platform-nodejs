@@ -3,8 +3,8 @@ require.bundle("", function(require)
     
     require.memoize("/main.js", function(require, exports, module)
     {
-    var __filename = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/06-JsonModule/main.js";
-    var __dirname = "/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-NodeJSLoaderFeatureBundles/dist/06-JsonModule";
+        var __filename = require.sandbox.id + "/main.js";
+        var __dirname = require.sandbox.id + "";
         
         var WORD = require("./word").word;
         
