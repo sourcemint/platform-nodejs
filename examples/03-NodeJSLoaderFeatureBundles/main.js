@@ -25,14 +25,19 @@ exports.main = function()
 					packageIdHashSeed: "__TEST__"
 				}), function()
 				{
+					// TODO: Only do this if running in strict mode.					
+					/*
 					if (filename === "Avoid-VariableRequire")
 					{
 						// This example should have thrown and marked as successful below.
 						throw new Error("The 'Avoid-VariableRequire' example should have thrown!");
 					}
+					*/
 				},
 				function(err)
 				{
+					// TODO: Only do this if running in strict mode.					
+					/*
 					if (filename === "Avoid-VariableRequire")
 					{
 						// We ignore the error as we expect it to throw if successful.
@@ -41,6 +46,8 @@ exports.main = function()
 					{
 						throw err;
 					}
+					*/
+					throw err;
 				});
 			});
 		}

@@ -1,8 +1,5 @@
 {
     "mappings": {
         "package": "../packageB"
-    },
-    "directories": {
-        "lib": ""
     }
 }
