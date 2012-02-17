@@ -37,7 +37,7 @@ require.bundle("", function(require)
     require.memoize("/words/hello.js", function(require, exports, module)
     {
         var __filename = require.sandbox.id + "/words/hello.js";
-        var __dirname = require.sandbox.id + "//words";
+        var __dirname = require.sandbox.id + "/words";
         
         // Circular dependency.
         var GREETINGS = require("../greetings");
@@ -53,5 +53,5 @@ require.bundle("", function(require)
         }
         
     });
-    require.memoize("/package.json", {"main":"/main.js","directories":{"lib":"lib"},"mappings":{}});
+    require.memoize("/package.json", {"main":"/main.js","directories":{"lib":""},"mappings":{}});
 });

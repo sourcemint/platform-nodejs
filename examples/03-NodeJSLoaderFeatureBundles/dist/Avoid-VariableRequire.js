@@ -8,7 +8,12 @@ require.bundle("", function(require)
         
         exports.main = function()
         {
-        	module.log("Hello from 01-HelloWorld!");
+        	var moduleId = "./lib";
+        
+        	// TODO: This should throw if running in strict mode!
+        	var obj = require(moduleId);
+        
+        	module.log(obj.main());
         }
         
     });

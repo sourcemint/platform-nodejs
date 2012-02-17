@@ -88,5 +88,5 @@ require.bundle("", function(require)
         }
         
     });
-    require.memoize("/package.json", {"name":"sourcemint-platform-nodejs-examples-04-NodeJSPlatformFeatures-01-Globals","version":"0.1.0","engines":{"nodejs":"0.x"},"scripts":{"test":"node main"},"main":"/main.js","directories":{"lib":"lib"},"mappings":{}});
+    require.memoize("/package.json", {"name":"sourcemint-platform-nodejs-examples-04-NodeJSPlatformFeatures-01-Globals","version":"0.1.0","engines":{"nodejs":"0.x"},"scripts":{"test":"node main"},"main":"/main.js","directories":{"lib":""},"mappings":{}});
 });

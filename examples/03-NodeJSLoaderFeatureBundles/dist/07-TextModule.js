@@ -22,5 +22,5 @@ require.bundle("", function(require)
         
     });
     require.memoize("/hello.txt", "Hello%20%5C%20%22%200%20-%20_%20.%20!%20~%20*%20'%20(%20)%20%3B%20%2C%20%2F%20%3F%20%3A%20%40%20%26%20%3D%20%2B%20%24");
-    require.memoize("/package.json", {"main":"/main.js","directories":{"lib":"lib"},"mappings":{}});
+    require.memoize("/package.json", {"main":"/main.js","directories":{"lib":""},"mappings":{}});
 });

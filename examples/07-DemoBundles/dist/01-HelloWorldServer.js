@@ -44,6 +44,6 @@ require.bundle("", function(require)
         }
         
     });
-    require.memoize("/package.json", {"name":"sourcemint-platform-nodejs-examples-06-Demos-01-HelloWorldServer","version":"0.1.0","engines":{"nodejs":"0.x"},"scripts":{"test":"node test"},"main":"/main.js","directories":{"lib":"lib"},"mappings":{"__nodejs__":"__nodejs.org/0__"}});
-    require.memoize("043956adb8f7b26566da4cdc0e2ca286566dc494/package.json", {"directories":{"lib":"lib"},"mappings":{}});
+    require.memoize("/package.json", {"name":"sourcemint-platform-nodejs-examples-06-Demos-01-HelloWorldServer","version":"0.1.0","engines":{"nodejs":"0.x"},"scripts":{"test":"node test"},"main":"/main.js","directories":{"lib":""},"mappings":{"__nodejs__":"__nodejs.org/0__"}});
+    require.memoize("043956adb8f7b26566da4cdc0e2ca286566dc494/package.json", {"directories":{"lib":""},"mappings":{}});
 });

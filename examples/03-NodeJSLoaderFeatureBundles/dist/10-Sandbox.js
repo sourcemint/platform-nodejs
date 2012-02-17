@@ -37,5 +37,5 @@ require.bundle("", function(require)
         }
         
     });
-    require.memoize("/package.json", {"main":"/main.js","directories":{"lib":"lib"},"mappings":{}});
+    require.memoize("/package.json", {"main":"/main.js","directories":{"lib":""},"mappings":{}});
 });

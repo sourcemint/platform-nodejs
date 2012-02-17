@@ -17,5 +17,5 @@ require.bundle("", function(require)
     require.memoize("/word.js", {
     	word: "Hello"
     });
-    require.memoize("/package.json", {"main":"/main.js","directories":{"lib":"lib"},"mappings":{}});
+    require.memoize("/package.json", {"main":"/main.js","directories":{"lib":""},"mappings":{}});
 });

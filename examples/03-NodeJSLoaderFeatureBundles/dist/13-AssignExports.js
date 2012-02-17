@@ -6,10 +6,12 @@ require.bundle("", function(require)
         var __filename = require.sandbox.id + "/main.js";
         var __dirname = require.sandbox.id + "";
         
-        exports.main = function()
-        {
-        	module.log("Hello from 01-HelloWorld!");
-        }
+        module.exports = {
+        	main: function(options)
+        	{
+        		module.log("Hello from 13-AssignExports!");
+        	}
+        };
         
     });
     require.memoize("/package.json", {"main":"/main.js","directories":{"lib":""},"mappings":{}});

@@ -12,5 +12,5 @@ require.bundle("", function(require)
         }
         
     });
-    require.memoize("/package.json", {"main":"/init.js","directories":{"lib":"lib"},"mappings":{}});
+    require.memoize("/package.json", {"main":"/init.js","directories":{"lib":""},"mappings":{}});
 });
