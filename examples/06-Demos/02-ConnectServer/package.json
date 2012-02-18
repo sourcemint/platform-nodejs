@@ -10,5 +10,24 @@
     "scripts": {
         "test": "node test"
     },
-    "main": "./main.js"
+    "main": "./main.js",
+    "config": {
+        "github.com/sourcemint/bundler-js/0/-meta/config/0": {
+            "packages": {
+                "connect": {
+                    "descriptor": {
+                        "config": {
+                            "github.com/sourcemint/bundler-js/0/-meta/config/0": {
+                                "resolvers": {
+                                    "/lib/connect.js": [
+                                        "./lib/middleware/router.js"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }                
+            }
+        }
+    }
 }
