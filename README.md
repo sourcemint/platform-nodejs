@@ -1,7 +1,7 @@
 Sourcemint NodeJS Platform
 ==========================
 
-*Status: ALPHA* [![Build Status](https://secure.travis-ci.org/sourcemint/platform-nodejs.png)](http://travis-ci.org/sourcemint/platform-nodejs)
+*Status: ALPHA* [![Build Status](https://secure.travis-ci.org/sourcemint/platform-nodejs.png)](http://travis-ci.org/sourcemint/platform-nodejs) *(Tests work but sometimes fail on Travis CI)*
 
 Everything needed to use the [Sourcemint](http://sourcemint.com/) Ecosystem
 (including the [Sourcemint JavaScript Loader](https://github.com/sourcemint/loader-js)) on [NodeJS](http://nodejs.org/).
