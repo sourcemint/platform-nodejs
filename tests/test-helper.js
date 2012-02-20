@@ -1,7 +1,7 @@
 
 var Q = require("q"),
 	HTTP = require("http"),
-	ERROR = require("sourcemint-platform-nodejs/lib/util/error");
+	ERROR = require("../lib/util/error");
 
 
 exports.makeTest = function(REQUIRE, EXPORTS, MODULE, testCallback)

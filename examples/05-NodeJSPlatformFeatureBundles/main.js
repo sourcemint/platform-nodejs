@@ -3,7 +3,8 @@ var LOADER = require("sourcemint-platform-nodejs/lib/loader"),
 	ERROR = require("sourcemint-platform-nodejs/lib/util/error"),
 	BUNDLER = require("sourcemint-bundler-js/lib/bundler"),
 	PATH = require("path"),
-	FS = require("fs");
+	FS = require("fs"),
+	Q = require("q");
 
 
 exports.main = function()
@@ -14,6 +15,11 @@ exports.main = function()
 
 	FS.readdirSync(basePath).forEach(function(filename)
 	{
+	    // TODO: Get this working in bundle format.
+	    if (filename === "02-BundlerMiddleware") {
+	        return;
+	    }
+
 		var exampleBasePath = basePath + "/" + filename;
 
 		if (PATH.existsSync(exampleBasePath + "/package.json"))

@@ -1,5 +1,5 @@
 
-var HELPER = require("../test-helper"),
+var HELPER = require("../../../tests/test-helper"),
 	ASSERT = require("assert"),
 	HTTP = require("http");
 

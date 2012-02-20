@@ -2,7 +2,8 @@
 var Q = require("q"),
 	PATH = require("path"),
 	FS = require("fs"),
-	EXEC = require("child_process").exec;
+	EXEC = require("child_process").exec,
+	UTIL = require("n-util");
 
 const EXAMPLES_BASE_PATH = __dirname + "/../examples";
 
@@ -81,8 +82,10 @@ function linkPackages()
 			{
 				FS.mkdirSync(basePath + "/node_modules", 0775);
 			}
-
-			Object.keys(descriptor.dependencies).forEach(function(name)
+			
+			var deps = descriptor.devDependencies || {};
+			UTIL.update(deps, descriptor.dependencies || {});
+			Object.keys(deps).forEach(function(name)
 			{
 				if (name === "sourcemint-platform-nodejs" ||
 					ourDescriptor.dependencies[name] === descriptor.dependencies[name] ||
@@ -92,12 +95,7 @@ function linkPackages()
 						// TODO: Find a symlink test that does not throw if it does not exist.
 						FS.lstatSync(basePath + "/node_modules/" + name);
 					} catch(e) {
-						if (name === "sourcemint-platform-nodejs")
-						{
-							FS.symlinkSync("../../..", basePath + "/node_modules/" + name);
-						} else {
-							FS.symlinkSync("../../../node_modules/" + name, basePath + "/node_modules/" + name);
-						}
+						FS.symlinkSync(filename.replace(/[^\/]+/g, "..") + "/../../node_modules/" + name, basePath + "/node_modules/" + name);
 					}
 				}
 			});
