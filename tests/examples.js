@@ -68,13 +68,17 @@ function linkPackages()
 
 	var ourDescriptor = JSON.parse(FS.readFileSync(__dirname + "/../package.json"));
 
-	FS.readdirSync(EXAMPLES_BASE_PATH).forEach(function(filename)
+	FS.readdirSync(EXAMPLES_BASE_PATH).concat([
+        "04-NodeJSPlatformFeatures/02-BundlerMiddleware"
+	]).forEach(function(filename)
 	{
 		var basePath = EXAMPLES_BASE_PATH + "/" + filename;
 
 		if (PATH.existsSync(basePath + "/package.json"))
 		{
-			packages.push(filename);
+		    if (filename.split("/").length === 1) {
+		        packages.push(filename);
+		    }
 
 			var descriptor = JSON.parse(FS.readFileSync(basePath + "/package.json"));
 
