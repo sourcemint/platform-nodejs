@@ -4,11 +4,13 @@
     "dependencies": {
         "q": "0.x",
         "sourcemint-loader-js": "0.x",
-        "detective": "0.x"
+        "detective": "0.x",
+        "connect": "1.x"
     },
     "devDependencies": {
         "vows": "0.x",
-        "sourcemint-bundler-js": "0.x"
+        "sourcemint-bundler-js": "0.x",
+        "n-util": "0.x"
     },
     "scripts": {
         "test": "vows tests/adapter/vows"
