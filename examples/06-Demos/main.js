@@ -1,8 +1,9 @@
 
-var ERROR = require("sourcemint-platform-nodejs/lib/util/error"),
-	EXEC = require("child_process").exec;
+var ERROR = require("../../lib/util/error"),
+	EXEC = require("child_process").exec,
 	PATH = require("path"),
-	FS = require("fs");
+	FS = require("fs"),
+    Q = require("q");
 
 
 exports.main = function()
