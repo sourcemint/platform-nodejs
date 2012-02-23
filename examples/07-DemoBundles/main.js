@@ -1,9 +1,10 @@
 
-var LOADER = require("sourcemint-platform-nodejs/lib/loader"),
-	ERROR = require("sourcemint-platform-nodejs/lib/util/error"),
-	BUNDLER = require("sourcemint-bundler-js/lib/bundler"),
+var LOADER = require("../../lib/loader"),
+	ERROR = require("../../lib/util/error"),
+	BUNDLER = require("../../lib/bundler"),
 	PATH = require("path"),
-	FS = require("fs");
+	FS = require("fs"),
+    Q = require("q");
 
 
 exports.main = function()
