@@ -12,6 +12,7 @@ Everything needed to use the [Sourcemint](http://sourcemint.com/) Ecosystem
   * Sponsor: [Sourcemint](http://sourcemint.com/)
   * Mailing list: [groups.google.com/group/sourcemint](http://groups.google.com/group/sourcemint)
 
+
 Usage
 =====
 
@@ -19,5 +20,13 @@ Usage
     cd sourcemint-platform-nodejs
     npm install
     npm test
+
+
+Examples
+========
+
+There are various examples that double as unit tests in `./examples`.
+
+For end-user examples of common use-cases see [github.com/sourcemint/examples-js](http://github.com/sourcemint/examples-js/).
 
 More examples and documentation will be available in time.

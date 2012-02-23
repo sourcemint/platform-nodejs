@@ -44,7 +44,12 @@ exports.makeTest = function(REQUIRE, EXPORTS, MODULE, testCallback)
 	}
 
 	if (REQUIRE.main === MODULE) {
-		EXPORTS.main().fail(ERROR.logError);
+		EXPORTS.main().fail(function(err) {
+		    ERROR.logError(err);
+
+		    // TODO: Get rid of this once we know why the event loop sometimes hangs on error.
+	        process.exit(0);
+		});
 	}
 }
 

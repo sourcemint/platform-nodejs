@@ -1,6 +1,7 @@
 
 var VOWS = require("vows"),
-	ASSERT = require("assert");
+	ASSERT = require("assert"),
+	EXAMPLES = require("../examples");
 
 
 VOWS.describe("Tests").addBatch(
@@ -10,14 +11,17 @@ VOWS.describe("Tests").addBatch(
 		topic: function()
 		{
 			var self = this;
-			require("../examples").main().then(function() {
+			EXAMPLES.main({
+		        packageBasePath: __dirname + "/../..",
+		        extraExamples: EXAMPLES.extraExamples
+		    }).then(function() {
 				self.callback(true);
 			}, function(err) {
 				// NOTE: If this fires and `err` instanceof Error `vows` will fail this test.
 				self.callback(err);
 			});
 		},
-		"all examples passed": function(status)
+		"all examples worked": function(status)
 		{
 			ASSERT.equal(status, true);
 		}
