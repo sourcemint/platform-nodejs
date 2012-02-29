@@ -135,7 +135,8 @@ exports.main = function(options)
 }
 
 exports.extraExamples = [
-    "04-PlatformFeatures/02-BundlerMiddleware"
+    "04-PlatformFeatures/02-BundlerMiddleware",
+    "04-PlatformFeatures/03-BundlerMiddlewareBundleLoader"
 ];
 
 if (require.main === module) {
