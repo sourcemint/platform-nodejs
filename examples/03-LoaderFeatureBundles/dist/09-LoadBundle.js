@@ -1,3 +1,4 @@
+// @sourcemint-bundle-partition-map: {"report":[1149,2670]}                                                                                                                           
 require.bundle("", function(require)
 {
     
@@ -36,3 +37,4 @@ require.bundle("", function(require)
     });
     require.memoize("/package.json", {"main":"/main.js","directories":{"lib":""},"mappings":{}});
 });
+// @sourcemint-bundle-report: {"sourceReport":{"mainPackage":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/09-LoadBundle","packages":{"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/09-LoadBundle":{"mainModule":{"path":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/09-LoadBundle/main.js"},"modules":{"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/09-LoadBundle/main.js":{"staticLinks":{},"dynamicLinks":{"extraModuleID":"extraModuleID"},"treatAs":"js-module"}},"mappings":{}}}},"mappedReport":{"mainPackage":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/09-LoadBundle","packages":{"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/09-LoadBundle":{"mainModule":{"path":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/09-LoadBundle/main.js"},"modules":{"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/09-LoadBundle/main.js":{"staticLinks":{},"dynamicLinks":{"extraModuleID":"extraModuleID"},"treatAs":"js-module"}},"mappings":{}}}},"bundleReport":{"mainBundle":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/03-LoaderFeatureBundles/dist/09-LoadBundle.js","packages":{},"modules":{"/main.js":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/09-LoadBundle/main.js"}}}
