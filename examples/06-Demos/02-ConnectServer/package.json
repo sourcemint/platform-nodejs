@@ -18,10 +18,12 @@
                     "descriptor": {
                         "config": {
                             "github.com/sourcemint/bundler-js/0/-meta/config/0": {
-                                "resolvers": {
-                                    "/lib/connect.js": [
-                                        "./lib/middleware/router.js"
-                                    ]
+                                "modules": {
+                                    "/lib/connect.js": {
+                                        "dynamicLinks": [
+                                            "./lib/middleware/router.js"
+                                        ]
+                                    }
                                 }
                             }
                         }
