@@ -22,7 +22,8 @@ exports.main = function()
 			done = Q.when(done, function()
 			{
 				return Q.when(BUNDLER.bundle(exampleBasePath, __dirname + "/dist", {
-					packageIdHashSeed: "__TEST__"
+					packageIdHashSeed: "__TEST__",
+					forceCompleteBuild: true
 				}), function()
 				{
 					// TODO: Only do this if running in strict mode.					
