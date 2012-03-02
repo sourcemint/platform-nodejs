@@ -9,11 +9,10 @@
         "connect": "1.x"
     },
     "devDependencies": {
-        "vows": "0.x",
         "n-util": "0.x",
         "zombie": "0.x"
     },
     "scripts": {
-        "test": "vows tests/adapter/vows"
+        "test": "node tests/examples"
     }
 }
