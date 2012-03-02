@@ -3,6 +3,23 @@ require.bundle("", function(require)
 {
 // @sourcemint-bundle-header: {}
 
+// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/04-PackageLocalDependencies/main.js","id":"/main.js"}
+require.memoize("/main.js", 
+function(require, exports, module)
+{
+    var __filename = require.sandbox.id + "/main.js";
+    var __dirname = require.sandbox.id + "";
+    
+    // One-way dependency.
+    var GREETINGS = require("./greetings");
+    
+    exports.main = function(options)
+    {
+    	module.log(GREETINGS.getGreeting());
+    };
+    
+}
+);
 // @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/04-PackageLocalDependencies/greetings.js","id":"/greetings.js"}
 require.memoize("/greetings.js", 
 function(require, exports, module)
@@ -44,23 +61,6 @@ function(require, exports, module)
     {
     	return GREETINGS.getName();
     }
-    
-}
-);
-// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/04-PackageLocalDependencies/main.js","id":"/main.js"}
-require.memoize("/main.js", 
-function(require, exports, module)
-{
-    var __filename = require.sandbox.id + "/main.js";
-    var __dirname = require.sandbox.id + "";
-    
-    // One-way dependency.
-    var GREETINGS = require("./greetings");
-    
-    exports.main = function(options)
-    {
-    	module.log(GREETINGS.getGreeting());
-    };
     
 }
 );

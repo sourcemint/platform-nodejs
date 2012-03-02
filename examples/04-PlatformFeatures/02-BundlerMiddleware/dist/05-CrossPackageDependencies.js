@@ -3,41 +3,6 @@ require.bundle("", function(require)
 {
 // @sourcemint-bundle-header: {}
 
-// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/05-CrossPackageDependencies/packages/packageA/greetings.js","id":"9600bb1b572fba81a38e7d3c0eb638268e6a9d8d/greetings.js"}
-require.memoize("9600bb1b572fba81a38e7d3c0eb638268e6a9d8d/greetings.js", 
-function(require, exports, module)
-{
-    var __filename = require.sandbox.id + "9600bb1b572fba81a38e7d3c0eb638268e6a9d8d/greetings.js";
-    var __dirname = require.sandbox.id + "/9600bb1b572fba81a38e7d3c0eb638268e6a9d8d";
-    
-    var HELLO = require("package/hello");
-    
-    exports.getGreeting = function()
-    {
-    	return HELLO.getWord() + " from " + HELLO.getName() + "!";
-    }
-    
-    exports.getName = function()
-    {
-    	return "05-CrossPackageDependencies";
-    }
-    
-}
-);
-// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/05-CrossPackageDependencies/packages/packageA/logger.js","id":"9600bb1b572fba81a38e7d3c0eb638268e6a9d8d/logger.js"}
-require.memoize("9600bb1b572fba81a38e7d3c0eb638268e6a9d8d/logger.js", 
-function(require, exports, module)
-{
-    var __filename = require.sandbox.id + "9600bb1b572fba81a38e7d3c0eb638268e6a9d8d/logger.js";
-    var __dirname = require.sandbox.id + "/9600bb1b572fba81a38e7d3c0eb638268e6a9d8d";
-    
-    exports.log = function(message)
-    {
-    	module.log(message);
-    }
-    
-}
-);
 // @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/05-CrossPackageDependencies/packages/packageB/words/hello.js","id":"80b6bcb59fc2b65675648d0e052b75b4620764ee/words/hello.js"}
 require.memoize("80b6bcb59fc2b65675648d0e052b75b4620764ee/words/hello.js", 
 function(require, exports, module)
@@ -87,6 +52,41 @@ function(require, exports, module)
     exports.main = function(options)
     {
     	LOGGER.log(GREETINGS.getGreeting());
+    }
+    
+}
+);
+// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/05-CrossPackageDependencies/packages/packageA/greetings.js","id":"9600bb1b572fba81a38e7d3c0eb638268e6a9d8d/greetings.js"}
+require.memoize("9600bb1b572fba81a38e7d3c0eb638268e6a9d8d/greetings.js", 
+function(require, exports, module)
+{
+    var __filename = require.sandbox.id + "9600bb1b572fba81a38e7d3c0eb638268e6a9d8d/greetings.js";
+    var __dirname = require.sandbox.id + "/9600bb1b572fba81a38e7d3c0eb638268e6a9d8d";
+    
+    var HELLO = require("package/hello");
+    
+    exports.getGreeting = function()
+    {
+    	return HELLO.getWord() + " from " + HELLO.getName() + "!";
+    }
+    
+    exports.getName = function()
+    {
+    	return "05-CrossPackageDependencies";
+    }
+    
+}
+);
+// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/05-CrossPackageDependencies/packages/packageA/logger.js","id":"9600bb1b572fba81a38e7d3c0eb638268e6a9d8d/logger.js"}
+require.memoize("9600bb1b572fba81a38e7d3c0eb638268e6a9d8d/logger.js", 
+function(require, exports, module)
+{
+    var __filename = require.sandbox.id + "9600bb1b572fba81a38e7d3c0eb638268e6a9d8d/logger.js";
+    var __dirname = require.sandbox.id + "/9600bb1b572fba81a38e7d3c0eb638268e6a9d8d";
+    
+    exports.log = function(message)
+    {
+    	module.log(message);
     }
     
 }
