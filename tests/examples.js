@@ -143,5 +143,5 @@ if (require.main === module) {
 	exports.main({
 	    packageBasePath: __dirname + "/..",
 	    extraExamples: exports.extraExamples
-	}).fail(ERROR.logError);
+	}).fail(ERROR.exitProcessWithError);
 }
