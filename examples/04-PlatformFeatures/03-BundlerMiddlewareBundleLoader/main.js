@@ -12,23 +12,13 @@ exports.main = function(onReadyDeferred, options)
 	{
         app.get(/^\/$/, CONNECT.static(__dirname));
 
-        app.get(/^(\/example)(\.js)?(\/(.*))?$/, function (req, res)
-		{
-            req.url = req.params[2] || "";
-            BUNDLER.Middleware(__dirname + "/example", __dirname + "/dist", {
-		        packageIdHashSeed: "__EXAMPLE__",
-		        bundleLoader: true
-		    }).handle(req, res);
-		});
-
-        app.get(/^(\/sub-package)(\.js)?(\/(.*))?$/, function (req, res)
-        {
-            req.url = req.params[2] || "";
-            BUNDLER.Middleware(__dirname + "/sub-package", __dirname + "/dist", {
-                packageIdHashSeed: "__EXAMPLE__",
-                bundleLoader: true
-            }).handle(req, res);
-        });
+        app.get(/^(\/bundles\/)([^\/]*?)(?:\.js)?(\/.*)?$/, BUNDLER.hoist(__dirname + "/$2", {
+            distributionBasePath: __dirname + "/dist",
+	        packageIdHashSeed: "__EXAMPLE__",
+	        bundleLoader: true,
+	        // This is needed only when bundling loader.
+            bundleUrlPrefix: "$1"
+		}));
 	}));
 
 	/*TEST*/ if (onReadyDeferred) {

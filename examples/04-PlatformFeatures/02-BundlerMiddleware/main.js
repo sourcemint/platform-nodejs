@@ -19,8 +19,8 @@ exports.main = function(onReadyDeferred, options)
         app.get(/^\/loader.min.js.gz-size/, CONNECT.static(LOADER_BASE_PATH + "/workspace/www"));
         app.get(/^\/examples\/DevUI/, CONNECT.static(LOADER_BASE_PATH));
 
-        app.get(/^\/examples\/([^\/]*?)(\.js)?(\/(.*))?$/, function (req, res)
-		{
+        app.get(/^\/examples\/([^\/]*?)(?:\.js)?(\/.*)?$/, function (req, res)
+        {
             var examplePath = EXAMPLES_BASE_PATH + "/" + req.params[0];
 
             // Only some of the loader examples can be generated from source packages as the other examples
@@ -31,14 +31,11 @@ exports.main = function(onReadyDeferred, options)
                 return;
             }
 
-            // TODO: Maybe we can do without this.
-            req.url = req.url.substring(10 + req.params[0].length + (req.params[1] || "").length);
-
-            // TODO: Make this `connect` compatible.
-            BUNDLER.Middleware(examplePath, __dirname + "/dist", {
-		        packageIdHashSeed: "__EXAMPLE__"
-		    }).handle(req, res);
-		});
+            BUNDLER.hoist(EXAMPLES_BASE_PATH + "/$1", {
+                distributionBasePath: __dirname + "/dist",
+                packageIdHashSeed: "__EXAMPLE__"
+            })(req, res);
+        });
 	}));
 
 	/*TEST*/ if (onReadyDeferred) {

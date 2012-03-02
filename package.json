@@ -6,10 +6,10 @@
         "sourcemint-loader-js": "0.x",
         "sourcemint-bundler-js": "0.x",
         "detective": "0.x",
-        "connect": "1.x"
+        "connect": "1.x",
+        "n-util": "0.x"
     },
     "devDependencies": {
-        "n-util": "0.x",
         "zombie": "0.x"
     },
     "scripts": {
