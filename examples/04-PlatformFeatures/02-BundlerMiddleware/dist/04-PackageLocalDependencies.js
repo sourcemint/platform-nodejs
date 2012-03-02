@@ -3,6 +3,28 @@ require.bundle("", function(require)
 {
 // @sourcemint-bundle-header: {}
 
+// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/04-PackageLocalDependencies/words/hello.js","id":"/words/hello.js"}
+require.memoize("/words/hello.js", 
+function(require, exports, module)
+{
+    var __filename = require.sandbox.id + "/words/hello.js";
+    var __dirname = require.sandbox.id + "/words";
+    
+    // Circular dependency.
+    var GREETINGS = require("../greetings");
+    
+    exports.getWord = function()
+    {
+    	return "Hello";
+    }
+    
+    exports.getName = function()
+    {
+    	return GREETINGS.getName();
+    }
+    
+}
+);
 // @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/04-PackageLocalDependencies/main.js","id":"/main.js"}
 require.memoize("/main.js", 
 function(require, exports, module)
@@ -38,28 +60,6 @@ function(require, exports, module)
     exports.getName = function()
     {
     	return "04-PackageLocalDependencies";
-    }
-    
-}
-);
-// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/04-PackageLocalDependencies/words/hello.js","id":"/words/hello.js"}
-require.memoize("/words/hello.js", 
-function(require, exports, module)
-{
-    var __filename = require.sandbox.id + "/words/hello.js";
-    var __dirname = require.sandbox.id + "/words";
-    
-    // Circular dependency.
-    var GREETINGS = require("../greetings");
-    
-    exports.getWord = function()
-    {
-    	return "Hello";
-    }
-    
-    exports.getName = function()
-    {
-    	return GREETINGS.getName();
     }
     
 }

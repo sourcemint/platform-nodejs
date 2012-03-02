@@ -3,41 +3,6 @@ require.bundle("", function(require)
 {
 // @sourcemint-bundle-header: {}
 
-// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/05-CrossPackageDependencies/packages/packageB/words/hello.js","id":"80b6bcb59fc2b65675648d0e052b75b4620764ee/words/hello.js"}
-require.memoize("80b6bcb59fc2b65675648d0e052b75b4620764ee/words/hello.js", 
-function(require, exports, module)
-{
-    var __filename = require.sandbox.id + "80b6bcb59fc2b65675648d0e052b75b4620764ee/words/hello.js";
-    var __dirname = require.sandbox.id + "/80b6bcb59fc2b65675648d0e052b75b4620764ee/words";
-    
-    var GREETINGS = require("package/greetings");
-    
-    exports.getWord = function()
-    {
-    	return require("letters/H").getLetter() + "ello";
-    }
-    
-    exports.getName = function()
-    {
-    	return GREETINGS.getName();
-    }
-    
-}
-);
-// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/05-CrossPackageDependencies/packages/packageC/H.js","id":"aa0b8cfbcfff960996a8692caee6ae43f33d6a67/H.js"}
-require.memoize("aa0b8cfbcfff960996a8692caee6ae43f33d6a67/H.js", 
-function(require, exports, module)
-{
-    var __filename = require.sandbox.id + "aa0b8cfbcfff960996a8692caee6ae43f33d6a67/H.js";
-    var __dirname = require.sandbox.id + "/aa0b8cfbcfff960996a8692caee6ae43f33d6a67";
-    
-    exports.getLetter = function()
-    {
-        return "H";
-    }
-    
-}
-);
 // @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/05-CrossPackageDependencies/main.js","id":"/main.js"}
 require.memoize("/main.js", 
 function(require, exports, module)
@@ -87,6 +52,41 @@ function(require, exports, module)
     exports.log = function(message)
     {
     	module.log(message);
+    }
+    
+}
+);
+// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/05-CrossPackageDependencies/packages/packageB/words/hello.js","id":"80b6bcb59fc2b65675648d0e052b75b4620764ee/words/hello.js"}
+require.memoize("80b6bcb59fc2b65675648d0e052b75b4620764ee/words/hello.js", 
+function(require, exports, module)
+{
+    var __filename = require.sandbox.id + "80b6bcb59fc2b65675648d0e052b75b4620764ee/words/hello.js";
+    var __dirname = require.sandbox.id + "/80b6bcb59fc2b65675648d0e052b75b4620764ee/words";
+    
+    var GREETINGS = require("package/greetings");
+    
+    exports.getWord = function()
+    {
+    	return require("letters/H").getLetter() + "ello";
+    }
+    
+    exports.getName = function()
+    {
+    	return GREETINGS.getName();
+    }
+    
+}
+);
+// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/05-CrossPackageDependencies/packages/packageC/H.js","id":"aa0b8cfbcfff960996a8692caee6ae43f33d6a67/H.js"}
+require.memoize("aa0b8cfbcfff960996a8692caee6ae43f33d6a67/H.js", 
+function(require, exports, module)
+{
+    var __filename = require.sandbox.id + "aa0b8cfbcfff960996a8692caee6ae43f33d6a67/H.js";
+    var __dirname = require.sandbox.id + "/aa0b8cfbcfff960996a8692caee6ae43f33d6a67";
+    
+    exports.getLetter = function()
+    {
+        return "H";
     }
     
 }
