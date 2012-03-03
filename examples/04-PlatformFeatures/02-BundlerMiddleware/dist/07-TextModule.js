@@ -3,6 +3,10 @@ require.bundle("", function(require)
 {
 // @sourcemint-bundle-header: {}
 
+// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/07-TextModule/hello.txt","id":"/hello.txt"}
+require.memoize("/hello.txt", 
+"Hello%20%5C%20%22%200%20-%20_%20.%20!%20~%20*%20'%20(%20)%20%3B%20%2C%20%2F%20%3F%20%3A%20%40%20%26%20%3D%20%2B%20%24"
+);
 // @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/07-TextModule/main.js","id":"/main.js"}
 require.memoize("/main.js", 
 function(require, exports, module)
@@ -25,10 +29,6 @@ function(require, exports, module)
     }
     
 }
-);
-// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/07-TextModule/hello.txt","id":"/hello.txt"}
-require.memoize("/hello.txt", 
-"Hello%20%5C%20%22%200%20-%20_%20.%20!%20~%20*%20'%20(%20)%20%3B%20%2C%20%2F%20%3F%20%3A%20%40%20%26%20%3D%20%2B%20%24"
 );
 // @sourcemint-bundle-descriptor: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/07-TextModule/package.json","id":"/package.json"}
 require.memoize("/package.json", 

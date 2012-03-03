@@ -3,6 +3,12 @@ require.bundle("", function(require)
 {
 // @sourcemint-bundle-header: {}
 
+// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/06-JsonModule/word.js","id":"/word.js"}
+require.memoize("/word.js", 
+{
+	word: "Hello"
+}
+);
 // @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/06-JsonModule/main.js","id":"/main.js"}
 require.memoize("/main.js", 
 function(require, exports, module)
@@ -17,12 +23,6 @@ function(require, exports, module)
     	module.log(WORD + " from 06-JsonModule!");
     }
     
-}
-);
-// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/06-JsonModule/word.js","id":"/word.js"}
-require.memoize("/word.js", 
-{
-	word: "Hello"
 }
 );
 // @sourcemint-bundle-descriptor: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/02-LoaderFeatures/06-JsonModule/package.json","id":"/package.json"}
