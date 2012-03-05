@@ -1,4 +1,5 @@
 {
+    "private": true,
     "name": "sourcemint-platform-nodejs-examples-04-PlatformFeatures-01-Globals",
     "version": "0.1.0",
     "engines": {

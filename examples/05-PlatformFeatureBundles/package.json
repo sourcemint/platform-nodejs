@@ -1,4 +1,5 @@
 {
+    "private": true,
     "name": "sourcemint-platform-nodejs-examples-05-PlatformFeatureBundles",
     "version": "0.1.0",
     "engines": {

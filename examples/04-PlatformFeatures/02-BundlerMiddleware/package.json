@@ -1,4 +1,5 @@
 {
+    "private": true,
     "name": "sourcemint-platform-nodejs-examples-04-PlatformFeatures-02-BundlerMiddleware",
     "version": "0.1.0",
     "engines": {

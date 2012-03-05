@@ -1,4 +1,5 @@
 {
+    "private": true,
     "name": "sourcemint-platform-nodejs-examples-01-CoreLoaderFeatureBundles",
     "version": "0.1.0",
     "engines": {

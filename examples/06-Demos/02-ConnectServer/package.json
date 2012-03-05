@@ -1,4 +1,5 @@
 {
+    "private": true,
     "name": "sourcemint-platform-nodejs-examples-06-Demos-02-ConnectServer",
     "version": "0.1.0",
     "engines": {
