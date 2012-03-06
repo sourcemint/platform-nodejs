@@ -95,7 +95,7 @@ function(require, exports, module)
 );
 // @sourcemint-bundle-descriptor: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/01-Globals/package.json","id":"/package.json"}
 require.memoize("/package.json", 
-{"name":"sourcemint-platform-nodejs-examples-04-PlatformFeatures-01-Globals","version":"0.1.0","engines":{"nodejs":"0.x"},"scripts":{"test":"node main"},"main":"/main.js","directories":{"lib":""},"mappings":{}}
+{"private":true,"name":"sourcemint-platform-nodejs-examples-04-PlatformFeatures-01-Globals","version":"0.1.0","engines":{"nodejs":"0.x"},"scripts":{"test":"node main"},"main":"/main.js","directories":{"lib":""},"mappings":{}}
 );
 // @sourcemint-bundle-ignore: 
 });

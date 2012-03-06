@@ -51,7 +51,7 @@ function(require, exports, module)
 );
 // @sourcemint-bundle-descriptor: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/06-Demos/01-HelloWorldServer/package.json","id":"/package.json"}
 require.memoize("/package.json", 
-{"name":"sourcemint-platform-nodejs-examples-06-Demos-01-HelloWorldServer","version":"0.1.0","engines":{"nodejs":"0.x"},"scripts":{"test":"node test"},"main":"/main.js","directories":{"lib":""},"mappings":{"__nodejs__":"__nodejs.org/0__"}}
+{"private":true,"name":"sourcemint-platform-nodejs-examples-06-Demos-01-HelloWorldServer","version":"0.1.0","engines":{"nodejs":"0.x"},"scripts":{"test":"node test"},"main":"/main.js","directories":{"lib":""},"mappings":{"__nodejs__":"__nodejs.org/0__"}}
 );
 // @sourcemint-bundle-descriptor: {"file":"nodejs.org/0/package.json","id":"043956adb8f7b26566da4cdc0e2ca286566dc494/package.json"}
 require.memoize("043956adb8f7b26566da4cdc0e2ca286566dc494/package.json", 

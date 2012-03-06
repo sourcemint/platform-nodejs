@@ -1007,7 +1007,7 @@ function(require, exports, module)
 );
 // @sourcemint-bundle-descriptor: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/06-Demos/02-ConnectServer/package.json","id":"/package.json"}
 require.memoize("/package.json", 
-{"name":"sourcemint-platform-nodejs-examples-06-Demos-02-ConnectServer","version":"0.1.0","engines":{"nodejs":"0.x"},"dependencies":{"connect":"1.x"},"scripts":{"test":"node test"},"main":"/main.js","directories":{"lib":""},"mappings":{"connect":"da0f9c24e679667d8e82ed043cd894e6da4c23d3"}}
+{"private":true,"name":"sourcemint-platform-nodejs-examples-06-Demos-02-ConnectServer","version":"0.1.0","engines":{"nodejs":"0.x"},"dependencies":{"connect":"1.x"},"scripts":{"test":"node test"},"main":"/main.js","directories":{"lib":""},"mappings":{"connect":"da0f9c24e679667d8e82ed043cd894e6da4c23d3"}}
 );
 // @sourcemint-bundle-descriptor: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/06-Demos/02-ConnectServer/node_modules/connect/package.json","id":"da0f9c24e679667d8e82ed043cd894e6da4c23d3/package.json"}
 require.memoize("da0f9c24e679667d8e82ed043cd894e6da4c23d3/package.json", 
