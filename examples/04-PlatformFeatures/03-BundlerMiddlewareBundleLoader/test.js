@@ -18,7 +18,7 @@ HELPER.makeTest(require, exports, module, function(Q, onTestDoneDeferred, option
             } else
             if (browser.error) {
                 Q.call(function() {
-                    throw new Error(browser.error);
+                    throw new Error(browser.error.stack);
                 }).fail(onTestDoneDeferred.reject);
             } else
             if (browser.window.console.output !== "Hello from Example!\n\nHello from Sub-Module!\n\nHello from Sub-Package!\n") {

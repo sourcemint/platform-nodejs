@@ -7,7 +7,7 @@ exports.main = function()
     {
         SUB_MODULE.main();
         
-        require.sandbox("./sub-package.js", function(sandbox)
+        require.sandbox("../sub-package.js", function(sandbox)
         {
             sandbox.main();
         });
