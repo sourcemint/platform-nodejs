@@ -70,12 +70,12 @@ var sourcemint = null;
 		function loadInBrowser(uri, loadedCallback) {
 		    // See if we are in a web worker.
 		    if (typeof importScripts !== "undefined") {
-		        importScripts(uri.replace(/^\{host\}/, ""));
+		        importScripts(uri.replace(/^\/?\{host\}/, ""));
 		        loadedCallback();
 		        return;
 		    }
-            if (/^\{host\}\//.test(uri)) {
-                uri = document.location.protocol + "//" + document.location.host + uri.substring(6);
+            if (/^\/?\{host\}\//.test(uri)) {
+                uri = document.location.protocol + "//" + document.location.host + uri.replace(/^\/?\{host\}/, "");
             } else
             if (/^\//.test(uri)) {
                 uri = document.location.protocol + "/" + uri;
@@ -247,7 +247,7 @@ var sourcemint = null;
 	                // If the `programIdentifier` (first argument) is relative it is resolved against the URI of the owning sandbox (not the owning page).
 					if (/^\./.test(arguments[0]))
 					{
-					    arguments[0] = sandboxIdentifier.replace(/\/[^\/]*$/, "") + "/" + arguments[0];
+					    arguments[0] = sandboxIdentifier + "/" + arguments[0];
 					    // HACK: Temporary hack as zombie (https://github.com/assaf/zombie) does not normalize path before sending to server.
 					    arguments[0] = arguments[0].replace(/\/\.\//g, "/");
 					}

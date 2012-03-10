@@ -7,7 +7,7 @@ require.bundle("", function(require)
 {
 // @sourcemint-bundle-header: {}
 
-// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example/main.js","fileMtime":1330971912000,"id":"/main.js"}
+// @sourcemint-bundle-module: {"file":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example/main.js","fileMtime":1331407689000,"id":"/main.js"}
 require.memoize("/main.js", 
 function(require, exports, module)
 {
@@ -22,7 +22,7 @@ function(require, exports, module)
         {
             SUB_MODULE.main();
             
-            require.sandbox("./sub-package.js", function(sandbox)
+            require.sandbox("../sub-package.js", function(sandbox)
             {
                 sandbox.main();
             });
@@ -96,12 +96,12 @@ var sourcemint = null;
 		function loadInBrowser(uri, loadedCallback) {
 		    // See if we are in a web worker.
 		    if (typeof importScripts !== "undefined") {
-		        importScripts(uri.replace(/^\{host\}/, ""));
+		        importScripts(uri.replace(/^\/?\{host\}/, ""));
 		        loadedCallback();
 		        return;
 		    }
-            if (/^\{host\}\//.test(uri)) {
-                uri = document.location.protocol + "//" + document.location.host + uri.substring(6);
+            if (/^\/?\{host\}\//.test(uri)) {
+                uri = document.location.protocol + "//" + document.location.host + uri.replace(/^\/?\{host\}/, "");
             } else
             if (/^\//.test(uri)) {
                 uri = document.location.protocol + "/" + uri;
@@ -273,7 +273,7 @@ var sourcemint = null;
 	                // If the `programIdentifier` (first argument) is relative it is resolved against the URI of the owning sandbox (not the owning page).
 					if (/^\./.test(arguments[0]))
 					{
-					    arguments[0] = sandboxIdentifier.replace(/\/[^\/]*$/, "") + "/" + arguments[0];
+					    arguments[0] = sandboxIdentifier + "/" + arguments[0];
 					    // HACK: Temporary hack as zombie (https://github.com/assaf/zombie) does not normalize path before sending to server.
 					    arguments[0] = arguments[0].replace(/\/\.\//g, "/");
 					}
@@ -501,7 +501,7 @@ var sourcemint = null;
         initLoader(exports);
         sourcemint = exports.require;
         if (!require) require = sourcemint;
-        sourcemint.sandbox("{host}/bundles/example.js", function(sandbox) {
+        sourcemint.sandbox("/{host}/bundles/example.js", function(sandbox) {
             sandbox.main();
         }, {
             rootBundleLoader: rootBundleLoader
@@ -510,4 +510,4 @@ var sourcemint = null;
         rootBundleLoader();
     }
 })();
-// @sourcemint-bundle-report: {"sourceReport":{"mainPackage":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example","packages":{"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example":{"mainModule":{"path":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example/main.js"},"modules":{"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example/main.js":{"staticLinks":{},"dynamicLinks":{"\"./sub-module\"":"\"./sub-module\""},"fileMtime":1330971912000,"treatAs":"js-module"}},"mappings":{}}}},"mappedReport":{"mainPackage":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example","packages":{"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example":{"mainModule":{"path":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example/main.js"},"modules":{"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example/main.js":{"staticLinks":{},"dynamicLinks":{"\"./sub-module\"":"\"./sub-module\""},"fileMtime":1330971912000,"treatAs":"js-module"}},"mappings":{}}}},"bundleReport":{"mainBundle":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/dist/example.js","packages":{},"modules":{"/main.js":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example/main.js"}}}
+// @sourcemint-bundle-report: {"sourceReport":{"mainPackage":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example","packages":{"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example":{"mainModule":{"path":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example/main.js"},"modules":{"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example/main.js":{"staticLinks":{},"dynamicLinks":{"\"./sub-module\"":"\"./sub-module\""},"fileMtime":1331407689000,"treatAs":"js-module"}},"mappings":{}}}},"mappedReport":{"mainPackage":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example","packages":{"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example":{"mainModule":{"path":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example/main.js"},"modules":{"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example/main.js":{"staticLinks":{},"dynamicLinks":{"\"./sub-module\"":"\"./sub-module\""},"fileMtime":1331407689000,"treatAs":"js-module"}},"mappings":{}}}},"bundleReport":{"mainBundle":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/dist/example.js","packages":{},"modules":{"/main.js":"/pinf/workspaces/github.com/sourcemint/platform-nodejs/0/examples/04-PlatformFeatures/03-BundlerMiddlewareBundleLoader/example/main.js"}}}
