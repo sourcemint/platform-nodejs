@@ -15,7 +15,7 @@ exports.main = function()
 
 	FS.readdirSync(basePath).forEach(function(filename)
 	{
-	    // TODO: Get this working in bundle format.
+	    // TODO: Get this working in bundled format.
 	    if (filename === "02-BundlerMiddleware" ||
             filename === "03-BundlerMiddlewareBundleLoader") {
 	        return;
