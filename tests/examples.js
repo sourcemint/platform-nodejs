@@ -75,23 +75,6 @@ exports.main = function(options)
 
         var ourDescriptor = JSON.parse(FS.readFileSync(PACKAGE_BASE_PATH + "/package.json"));
 
-        if (ourDescriptor.name === "sourcemint-platform-nodejs") {
-            try {
-    	        // TODO: Find a symlink test that does not throw if it does not exist.
-    	        FS.lstatSync(PACKAGE_BASE_PATH + "/node_modules/sourcemint-platform-nodejs");
-    	    } catch(e) {
-    	        FS.symlinkSync("..", PACKAGE_BASE_PATH + "/node_modules/sourcemint-platform-nodejs");
-    	    }
-        } else
-        if (ourDescriptor.name === "sourcemint-sdk-requirejs") {
-            try {
-                // TODO: Find a symlink test that does not throw if it does not exist.
-                FS.lstatSync(PACKAGE_BASE_PATH + "/node_modules/sourcemint-sdk-requirejs");
-            } catch(e) {
-                FS.symlinkSync("..", PACKAGE_BASE_PATH + "/node_modules/sourcemint-sdk-requirejs");
-            }
-        }
-
 	    FS.readdirSync(EXAMPLES_BASE_PATH).concat(options.extraExamples || []).forEach(function(filename)
 	    {
 	        var basePath = EXAMPLES_BASE_PATH + "/" + filename;
@@ -117,11 +100,24 @@ exports.main = function(options)
 	                    (ourDescriptor.dependencies && ourDescriptor.dependencies[name] === deps[name]) ||
 	                    (ourDescriptor.devDependencies && ourDescriptor.devDependencies[name] === deps[name])
 	                ) {
-	                    try {
-	                        // TODO: Find a symlink test that does not throw if it does not exist.
-	                        FS.lstatSync(basePath + "/node_modules/" + name);
-	                    } catch(e) {
-	                        FS.symlinkSync(filename.replace(/[^\/]+/g, "..") + RELATIVE_PATH + "/../node_modules/" + name, basePath + "/node_modules/" + name);
+	                    
+	                    if (name === ourDescriptor.name)
+	                    {
+	                        try {
+	                            // TODO: Find a symlink test that does not throw if it does not exist.
+	                            FS.lstatSync(basePath + "/node_modules/" + name);
+	                        } catch(e) {
+	                            FS.symlinkSync(filename.replace(/[^\/]+/g, "..") + RELATIVE_PATH + "/..", basePath + "/node_modules/" + name);
+	                        }
+	                    }
+	                    else
+	                    {
+	                        try {
+	                            // TODO: Find a symlink test that does not throw if it does not exist.
+	                            FS.lstatSync(basePath + "/node_modules/" + name);
+	                        } catch(e) {
+	                            FS.symlinkSync(filename.replace(/[^\/]+/g, "..") + RELATIVE_PATH + "/../node_modules/" + name, basePath + "/node_modules/" + name);
+	                        }
 	                    }
 	                }
 	            });
