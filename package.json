@@ -1,6 +1,6 @@
 {
     "name": "sourcemint-platform-nodejs",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "pm": "npm",
     "dependencies": {
         "q": "0.x",
