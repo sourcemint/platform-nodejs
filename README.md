@@ -25,7 +25,7 @@ Usage
 Examples
 ========
 
-There are various examples that double as unit tests in `./examples`.
+There are various examples that double as tests in `./examples`.
 Run `npm test` (see above) once first **before running individual examples** to get everything linked for the examples to run.
 
 For end-user examples of common use-cases see [github.com/sourcemint/examples-js](http://github.com/sourcemint/examples-js/).
