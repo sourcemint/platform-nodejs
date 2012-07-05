@@ -1,9 +1,11 @@
 
 var LOADER = require("sourcemint-platform-nodejs/lib/loader"),
 	ERROR = require("sourcemint-platform-nodejs/lib/util/error"),
-	BUNDLER = require("sourcemint-bundler-js/lib/bundler"),
+	BUNDLER = require("sourcemint-platform-nodejs/lib/bundler"),
 	PATH = require("path"),
-	FS = require("fs");
+	FS = require("fs"),
+	Q = require("q"),
+	VM = require("vm");
 
 
 exports.main = function()
@@ -23,6 +25,12 @@ exports.main = function()
 				return BUNDLER.bundle(exampleBasePath, __dirname + "/dist", {
 					packageIdHashSeed: "__TEST__",
                     forceCompleteBuild: true
+				}).then(function() {
+					return BUNDLER.bundle(exampleBasePath, __dirname + "/dist-bundled-loader", {
+						packageIdHashSeed: "__TEST__",
+	                    forceCompleteBuild: true,
+						bundleLoader: true
+					});
 				});
 			});
 		}
@@ -37,12 +45,20 @@ exports.main = function()
 			return FS.statSync(__dirname + "/dist/" + filename).isFile();
 		}).map(function(filename)
 		{
-			return [__dirname + "/dist/" + filename, basePath + "/" + filename.replace(/\.js$/, "") + "/test.js"];
+			return [
+				__dirname + "/dist/" + filename,
+				__dirname + "/dist-bundled-loader/" + filename,
+				basePath + "/" + filename.replace(/\.js$/, "") + "/test.js"
+			];
 		}).forEach(function(uris)
 		{
 			done = Q.when(done, function()
 			{
-				return bootBundle(uris[0], uris[1]);
+				return bootBundle(uris[0], uris[2]);
+			});
+			done = Q.when(done, function()
+			{
+				return runBundle(uris[1], uris[2]);
 			});
 		});
 		
@@ -73,6 +89,23 @@ function bootBundle(uri, testUri)
 			};
 		}
 	});
+
+	return deferred.promise;
+}
+
+function runBundle(uri, testUri)
+{
+	var deferred = Q.defer();
+
+	console.log("Running bundle: " + uri);
+
+	try {
+	
+		Q.when(require(testUri).main(require(uri).main), deferred.resolve, deferred.reject);
+
+	} catch(e) {
+		deferred.reject(e);
+	}
 
 	return deferred.promise;
 }
