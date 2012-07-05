@@ -1,7 +1,7 @@
 
 var PATH = require("path"),
     CONNECT = require("connect"),
-    BUNDLER = require("sourcemint-platform-nodejs/lib/bundler");
+    BUNDLER = require("sourcemint-platform-browser/lib/bundler");
 
 
 var EXAMPLES_BASE_PATH = __dirname + "/../../02-LoaderFeatures",

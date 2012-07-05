@@ -1,10 +1,11 @@
 
 var LOADER = require("sourcemint-platform-nodejs/loader"),
 	ERROR = require("sourcemint-platform-nodejs/lib/util/error"),
-	BUNDLER = require("sourcemint-platform-nodejs/lib/bundler"),
+	BUNDLER = require("sourcemint-platform-browser/lib/bundler"),
 	EXAMPLES = require("sourcemint-loader-js/tests/examples"),
 	PATH = require("path"),
-	FS = require("fs");
+	FS = require("fs"),
+	Q = require("q");
 
 
 exports.main = function()

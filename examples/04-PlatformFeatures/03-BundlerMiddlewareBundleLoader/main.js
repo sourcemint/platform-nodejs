@@ -1,7 +1,7 @@
 
 var PATH = require("path"),
     CONNECT = require("connect"),
-    BUNDLER = require("sourcemint-platform-nodejs/lib/bundler");
+    BUNDLER = require("sourcemint-platform-browser/lib/bundler");
 
 
 exports.main = function(onReadyDeferred, options)
