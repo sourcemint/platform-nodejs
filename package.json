@@ -2,10 +2,12 @@
     "name": "sourcemint-platform-nodejs",
     "version": "0.3.3",
     "pm": "npm",
+    "shrinkwrap": true,
     "dependencies": {
         "q": "0.x",
         "sourcemint-loader-js": "0.x",
         "sourcemint-bundler-js": "0.x",
+        "sourcemint-platform-browser": "0.x.",
         "detective": "0.x",
         "connect": "1.x",
         "n-util": "0.x",
