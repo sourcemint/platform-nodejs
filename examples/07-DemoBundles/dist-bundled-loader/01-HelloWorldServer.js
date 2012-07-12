@@ -800,12 +800,16 @@ exports.loadBundleCode = function(uri, callback)
         var platformRequire = require;
         var isMain = ((platformRequire && platformRequire.main === module)?true:false);
         require = LOADER_INJECTED.require;
-        sourcemint.sandbox(__dirname + "/01-HelloWorldServer.js", function(sandbox) {
+        sourcemint.sandbox(((typeof __dirname !== "undefined")?__dirname:".") + "/01-HelloWorldServer.js", function(sandbox) {
             if (typeof exports === "object") {
-                    var mainExports = sandbox.boot();
+                var mainExports = sandbox.boot();
+                if (typeof mainExports === "function") {
+                    module.exports = mainExports;
+                } else {
                     for (var key in mainExports) {
                         exports[key] = mainExports[key];
                     }
+                }
             } else {
                 sandbox.main();
             }
