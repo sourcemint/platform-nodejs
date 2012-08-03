@@ -8,6 +8,7 @@
         "sourcemint-loader-js": "0.x",
         "sourcemint-bundler-js": "0.x",
         "sourcemint-platform-browser": "0.x.",
+        "sourcemint-util-js": "0.1.x",
         "detective": "0.x",
         "connect": "1.x",
         "n-util": "0.x",
