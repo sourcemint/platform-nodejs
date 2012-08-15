@@ -3,7 +3,7 @@ var require, sourcemint;
 (function() {
     var rootBundleLoader = function(uri, loadedCallback) {
 // @sourcemint-bundle-ignore: 
-require.bundle("", function(require)
+sourcemint.bundle("", function(require)
 {
 // @sourcemint-bundle-header: {}
 
@@ -1061,9 +1061,27 @@ var sourcemint = null;
 				id: sandboxIdentifier
 			};
 
+		/*DEBUG*/ function logDebug() {
+		/*DEBUG*/ 	if (sandboxOptions.debug !== true) return;
+		/*DEBUG*/ 	// NOTRE: This does not work in google chrome.
+		/*DEBUG*/ 	//console.log.apply(null, arguments);
+		/*DEBUG*/ 	if (arguments.length === 1) {
+		/*DEBUG*/ 		console.log(arguments[0]);
+		/*DEBUG*/ 	} else
+		/*DEBUG*/ 	if (arguments.length === 2) {
+		/*DEBUG*/ 		console.log(arguments[0], arguments[1]);
+		/*DEBUG*/ 	} else
+		/*DEBUG*/ 	if (arguments.length === 3) {
+		/*DEBUG*/ 		console.log(arguments[0], arguments[1], arguments[2]);
+		/*DEBUG*/ 	} else
+		/*DEBUG*/ 	if (arguments.length === 4) {
+		/*DEBUG*/ 		console.log(arguments[0], arguments[1], arguments[2], arguments[3]);
+		/*DEBUG*/ 	}
+		/*DEBUG*/ }
 
 		// @credit https://github.com/unscriptable/curl/blob/62caf808a8fd358ec782693399670be6806f1845/src/curl.js#L319-360
 		function loadInBrowser(uri, loadedCallback) {
+			/*DEBUG*/ logDebug("[sm-loader]", 'loadInBrowser("' + uri + '")"');
 		    // See if we are in a web worker.
 		    if (typeof importScripts !== "undefined") {
 		        importScripts(uri.replace(/^\/?\{host\}/, ""));
@@ -1564,6 +1582,7 @@ exports.sandbox = function(sandboxIdentifier, loadedCallback, sandboxOptions)
         VM.runInNewContext(code, {
 		    // TODO: Inject and fix environment based on options.
         	require: LOADER.require,
+        	sourcemint: LOADER.require,
         	// TODO: Wrap to `console` object provided by `sandboxOptions` and inject module info.
         	console: console,
         	// NodeJS globals.
@@ -1760,6 +1779,7 @@ exports.loadBundleCode = function(uri, callback)
         var platformRequire = require;
         var isMain = ((platformRequire && platformRequire.main === module)?true:false);
         require = LOADER_INJECTED.require;
+        sourcemint.bundle = require.bundle;
         sourcemint.sandbox(((typeof __dirname !== "undefined")?__dirname:".") + "/02-ConnectServer.js", function(sandbox) {
             if (typeof exports === "object") {
                 var mainExports = sandbox.boot();

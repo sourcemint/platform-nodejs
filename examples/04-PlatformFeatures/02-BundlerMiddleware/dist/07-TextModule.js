@@ -1,5 +1,5 @@
 // @sourcemint-bundle-ignore: 
-require.bundle("", function(require)
+sourcemint.bundle("", function(require)
 {
 // @sourcemint-bundle-header: {}
 
