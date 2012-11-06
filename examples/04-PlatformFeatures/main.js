@@ -36,24 +36,24 @@ function runExample(path)
 
 	EXEC("npm install", {
 		cwd: path
-	}, function(err, stdout, stderr)
+	}, function(error, stdout, stderr)
 	{
-		if (err) deferred.reject(err);
-		else if (stderr) deferred.reject(stderr)
-		else {
+        if (error) {
+        	console.error(stderr);
+        	deferred.reject(new Error("Error running: npm install (cwd: " + path + ")"));
+		} else {
 
 			process.stdout.write(stdout);
 
 			EXEC("npm test", {
 				cwd: path
-			}, function(err, stdout, stderr)
+			}, function(error, stdout, stderr)
 			{
-				if (err) deferred.reject(err);
-				else if (stderr) deferred.reject(stderr)
-				else {
-					
+		        if (error) {
+		        	console.error(stderr);
+		        	deferred.reject(new Error("Error running: npm test (cwd: " + path + ")"));
+		        } else {					
 					process.stdout.write(stdout);
-
 					deferred.resolve();
 				}
 			});

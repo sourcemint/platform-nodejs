@@ -51,11 +51,12 @@ exports.main = function(options)
 
 	    EXEC("npm install", {
 	        cwd: packageRootPath
-	    }, function(err, stdout, stderr)
+	    }, function(error, stdout, stderr)
 	    {
-	        if (err) deferred.reject(err);
-	        else if (stderr) deferred.reject(stderr)
-	        else {
+	        if (error) {
+	        	console.error(stderr);
+	        	deferred.reject(new Error("Error running: npm install (cwd: " + packageRootPath + ")"));
+	        } else {
 	            process.stdout.write(stdout);
 	            deferred.resolve();
 	        }
